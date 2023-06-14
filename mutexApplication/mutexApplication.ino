@@ -25,7 +25,7 @@ void task1(void * param)
       sprintf(x,"%s,%d",(char*)param,y);
       Serial.println(x);
       y++;
-     // delay(100);
+      delay(100);
       xSemaphoreGive(mutex_h);
       taskYIELD();
     }
