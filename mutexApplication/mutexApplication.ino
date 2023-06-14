@@ -38,10 +38,11 @@ void task1(data_t *param)
       sprintf(x,"%s,%d",(char*)param->name,y);
       Serial.println(x);
       y++;
+      delay(100);
       xSemaphoreGive(mutex_h);
       taskYIELD();
     }
-    vTaskDelay(pdMS_TO_TICKS(100));
+    vTaskDelay(pdMS_TO_TICKS(10000));
   }
 }
 
